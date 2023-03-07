@@ -1,0 +1,91 @@
+import java.util.Scanner;
+    
+    class Ejercicio2 {
+      public static void main(String[] args) {
+    
+            Scanner obj = new Scanner(System.in);
+            
+            char son;                 //variable almac s o n//
+            int ing;              //ingresos totales del hogar//
+            int vehic;                 //vehiculos con ant >5//
+            int inm;                   //cantidad de inmuebles//
+            boolean embar = false;     //embarci//
+            boolean aero = false;         //aeronav//
+            boolean actiSoc = false;   //activos sociales capaz econ plen//
+            boolean cond = false;    //condicional de salida dowhile//
+    
+            System.out.println("Bienvenido, ingrese por favor lo siguientes datos");
+    
+            System.out.println("Ingresos grupo flial:");
+            ing=obj.nextInt();
+    
+            System.out.println("Cantidad de vehic. con ant inf a 5 annos:");
+            vehic=obj.nextInt();
+    
+            System.out.println("Ctdad de Inmuebles:");
+            inm=obj.nextInt();
+    
+            System.out.println("Es titul de un barco. Si o no (S/N):");
+            do {
+            son=obj.next().charAt(0);
+                if (son=='S' || son=='N'){
+                    if (son=='S'){
+                        embar=true;
+                    }
+                    else if (son=='N'){
+                        embar=false;
+                    }
+                    break;
+                }
+                else{
+                    System.out.println("Valor inv.");
+                    System.out.println("Intente de nuevo:");
+                }
+            } while (cond!=true);
+    
+            System.out.println("Es titul de un avion. Si o no (S/N):");
+            do {
+            son=obj.next().charAt(0);
+                if (son=='S' || son=='N'){
+                    if (son=='S'){
+                        aero=true;
+                    }
+                    else if (son=='N'){
+                        aero=false;
+                    }
+                    break;
+                }
+                else{
+                    System.out.println("Valor inv.");
+                    System.out.println("Intente de nuevo:");
+                }
+            } while (cond!=true);
+            
+            System.out.println("Es titul de un activ. soc. con capaz. econ. plen. Si o no (S/N):");
+            do {
+            son=obj.next().charAt(0);
+                if (son=='S' || son=='N'){
+                    if (son=='S'){
+                        actiSoc=true;
+                    }
+                    else if (son=='N'){
+                        actiSoc=false;
+                    }
+                    break;
+                }
+                else{
+                    System.out.println("Valor inv.");
+                    System.out.println("Intente de nuevo:");
+                }
+            } while (cond!=true);
+            
+            if ( ing >= 490000|| vehic >= 3 || inm >= 3 || embar == true || aero == true || actiSoc == true ) {
+                System.out.println("Usted pertenece al segmento de ingresos 'Alto'.");
+         }
+        else{
+            System.out.println("Usted esta por debajo del segmento de ingresos 'Alto'.");
+        }
+
+        obj.close();
+    }
+}
